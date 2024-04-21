@@ -92,6 +92,7 @@ function tickPhysics() {
         let d = displacement(ballStartPosition, ballPosition)
         document.getElementById("displacement").innerText = "Displacement: " + (d.x + ", " + d.y)
         document.getElementById("distance").innerText = "Distance: " + distance(d).toFixed(2);
+        document.getElementById("velocity").innerText = "Velocity: " + (ballVelocity.x + ", " + ballVelocity.y);
         ballPosition.x += ballVelocity.x
         ballPosition.y += (ballVelocity.y += gravitationalConstant)
         ballPosition.x = Math.round(ballPosition.x)
