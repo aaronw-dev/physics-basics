@@ -10,11 +10,13 @@
 
 <body>
     <div class="data">
-        <button onclick="startSim([0, -7])">Start simulation with 0 X velocity and 7 Y velocity</button>
-        <button onclick="startSim([6, -7])">Start simulation with 6 X velocity and 7 Y velocity</button>
-        <button onclick="startSim([-6, -7])">Start simulation with -6 X velocity and 7 Y velocity</button>
-        <span id="position"></span><br>
-        <span id="displacement"></span><br>
+        <button onclick="startSim([0, -1])">Start simulation</button>
+        <button onclick="addVelocity([5, -7])">Add 5 X and 7 Y velocity</button>
+        <button onclick="addVelocity([-5, -7])">Add -5 X and 7 Y velocity</button>
+        <button onclick="addVelocity([3, -3])">Add 3 X and 3 Y velocity</button>
+        <button onclick="addVelocity([-3, -3])">Add -3 X and 3 Y velocity</button>
+        <span id="position"></span>
+        <span id="displacement"></span>
         <span id="distance"></span>
     </div>
     <canvas id="canvas"></canvas>

@@ -13,7 +13,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
-ctx.arc(ballStartPosition.x, ballStartPosition.y, 20, 0 * Math.PI, 2 * Math.PI)
+ctx.arc(ballStartPosition.x, ballStartPosition.y, 5, 0 * Math.PI, 2 * Math.PI)
 ctx.fillStyle = "#00ff00"
 ctx.fill()
 
@@ -80,6 +80,9 @@ function distance(d) {
 }
 function reflectVector(vec, b) {
     return new Vector2(vec.x * b, -vec.y * b)
+}
+function addVelocity(v) {
+    ballVelocity = new Vector2(ballVelocity.x + v[0], ballVelocity.y + v[1])
 }
 function tickPhysics() {
     if ((ballPosition.y + (ballVelocity.y + gravitationalConstant)) + 30 < window.innerHeight - 50) {
