@@ -1,10 +1,3 @@
-class Rigidbody {
-    constructor(name, year) {
-        this.name = name;
-        this.year = year;
-    }
-}
-
 class Vector2 {
     x = 0;
     y = 0;
