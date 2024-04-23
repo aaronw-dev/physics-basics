@@ -18,9 +18,17 @@ class Line {
     start = new Vector2(0, 0);
     end = new Vector2(1, 0);
     normal = new Vector2(0, 1);
-    constructor(start = new Vector2(0, 0), end = new Vector2(1, 0)) {
+    constructor(start = new Vector2(0, 0), end = new Vector2(1, 0), flipnormal = false) {
         this.start = start;
         this.end = end;
+        let dx = end.x - start.x;
+        let dy = end.y - start.y;
+        this.flipnormal = flipnormal
+        if (this.flipnormal == true) {
+            this.normal = normalizeVector(new Vector2(-dy, dx));
+        } else {
+            this.normal = normalizeVector(new Vector2(dy, -dx));
+        }
     }
 }
 
@@ -29,11 +37,13 @@ class Box {
         this.stroke = stroke;
         this.fill = fill;
         this.fillcolor = fillcolor;
-        this.top = new Line(start, new Vector2(end.x, start.y));
-        this.right = new Line(new Vector2(end.x, start.y), end);
-        this.bottom = new Line(end, new Vector2(start.x, end.y));
-        this.left = new Line(new Vector2(start.x, end.y), start);
+        this.top = new Line(new Vector2(start.x, start.y), new Vector2(end.x, start.y), false);
+        this.right = new Line(new Vector2(end.x, start.y), new Vector2(end.x, end.y), true);
+        this.bottom = new Line(new Vector2(end.x, end.y), new Vector2(start.x, end.y), true);
+        this.bottom.normal = multiplyVector(this.bottom.normal, new Vector2(-1, 1))
+        this.left = new Line(new Vector2(start.x, end.y), new Vector2(start.x, start.y), true);
         this.start = start;
         this.end = end;
+        this.sides = [this.top, this.right, this.bottom, this.left]
     }
 }

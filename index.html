@@ -10,17 +10,18 @@
 
 <body>
     <div class="data">
-        <button onclick="startSim([0, 30])">Start simulation</button>
-        <button onclick="addVelocity([5, -7])">Add 5 X and 7 Y velocity</button>
-        <button onclick="addVelocity([-5, -7])">Add -5 X and 7 Y velocity</button>
-        <button onclick="addVelocity([3, -3])">Add 3 X and 3 Y velocity</button>
-        <button onclick="addVelocity([-3, -3])">Add -3 X and 3 Y velocity</button>
+        <button onclick="startSim([5, -5])" class="no-select">Start simulation</button>
+        <button onclick="addVelocity([5, -7])" class="no-select">Add 5 X and 7 Y velocity</button>
+        <button onclick="addVelocity([-5, -7])" class="no-select">Add -5 X and 7 Y velocity</button>
+        <button onclick="addVelocity([3, -3])" class="no-select">Add 3 X and 3 Y velocity</button>
+        <button onclick="addVelocity([-3, -3])" class="no-select">Add -3 X and 3 Y velocity</button>
         <span id="position"></span>
         <span id="displacement"></span>
         <span id="distance"></span>
         <span id="velocity"></span>
     </div>
     <canvas id="canvas"></canvas>
+    <script src="mathutils.js"></script>
     <script src="classes.js"></script>
     <script src="script.js"></script>
 </body>
