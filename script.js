@@ -31,14 +31,16 @@ const marker = createMarker("#00ff00", 5, addVector(ballPosition, new Vector2(0,
 //const groundMarker = createMarker("#42a1ff", 10)
 let test = new Line(new Vector2(20, 20), new Vector2(200, 20));
 //  drawLine(test);
-let testBox = new Box(true, true, "#ffff00", new Vector2(70, window.innerHeight - 90), new Vector2(window.innerWidth - 20, window.innerHeight - 20))
+let testBox = new Box(true, true, "#ffff00", new Vector2(20, window.innerHeight - 90), new Vector2(window.innerWidth - 20, window.innerHeight - 20))
 drawBox(testBox)
 let testBox1 = new Box(true, true, "#ffff00", new Vector2(20, 90), new Vector2(100, window.innerHeight - 90))
 drawBox(testBox1)
 let testBox2 = new Box(true, true, "#ffff00", new Vector2(1920 / 2, window.innerHeight - 590), new Vector2(window.innerWidth - 20, window.innerHeight - 520))
 drawBox(testBox2)
+let testBox3 = new Box(true, true, "#ffff00", new Vector2((1920 / 2) - 35, window.innerHeight - 160), new Vector2((1920 / 2) + 35, window.innerHeight - 90))
+drawBox(testBox3)
 
-const boxes = [testBox, testBox1, testBox2]
+const boxes = [testBox, testBox1, testBox2, testBox3]
 function createMarker(color, diameter = 10, initialPosition = new Vector2(0, 0)) {
     let marker = document.createElement("div")
     marker.className = "marker"
